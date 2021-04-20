@@ -1,5 +1,3 @@
-"use strict";
-
 import { Profile as PassportProfile } from "passport";
 import { Request } from "express";
 
