@@ -2,11 +2,11 @@
 
 import dotenv from "dotenv";
 import errorHandler from "errorhandler";
+dotenv.config({ path: ".env" });
 
 import app from "./app";
 
 // Setup .env
-dotenv.config({ path: ".env" });
 
 if (process.env.NODE_ENV === "dev") {
   // only use in development

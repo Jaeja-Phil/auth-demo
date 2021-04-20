@@ -8,17 +8,18 @@ import cors from "cors";
 import express from "express";
 import { NextFunction, Request, Response } from "express";
 import passport from "passport";
-
 import PassportClient from "./passport/PassportClient";
-
+import { sequelize } from "./sequelize/sequelize";
 // Create Express server
 const app = express();
 
 // Connect to Database
 if (process.env.NODE_ENV === "dev") {
   // set up DevDB on dev environment
+  sequelize.sync();
 } else {
   // connect to ProdDB on prod environment
+  sequelize.sync();
 }
 
 // Set CORS whitelist
